@@ -249,7 +249,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayscout \
-    LineageDialerscout
+    LineageDialerscout \
+    LineageSDKResscout
 
 # Power
 PRODUCT_PACKAGES += \
