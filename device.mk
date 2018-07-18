@@ -248,7 +248,8 @@ PRODUCT_PACKAGES += \
     SecureElementOverlayscout
 
 PRODUCT_PACKAGES += \
-    LineageApertureOverlayscout
+    LineageApertureOverlayscout \
+    LineageDialerscout
 
 # Power
 PRODUCT_PACKAGES += \
