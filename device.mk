@@ -247,6 +247,9 @@ PRODUCT_PACKAGES += \
     EuiccOverlay \
     SecureElementOverlayscout
 
+PRODUCT_PACKAGES += \
+    LineageApertureOverlayscout
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
