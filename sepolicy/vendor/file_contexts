@@ -15,6 +15,9 @@
 # Gatekeeper
 /vendor/bin/hw/android\.hardware\.gatekeeper-service\.trustonic                        u:object_r:hal_gatekeeper_default_exec:s0
 
+# Health Care
+/dev/goodix_health                                                                     u:object_r:goodix_health_device:s0
+
 # Init Scripts
 /vendor/bin/init\.mmi\.block_perm\.sh                                                  u:object_r:vendor_moto_init_shell_exec:s0
 /vendor/bin/init\.mmi\.boot\.sh                                                        u:object_r:vendor_moto_init_shell_exec:s0
@@ -30,9 +33,6 @@
 
 # IMS
 /vendor/bin/mtk_lbs_service                                                            u:object_r:lbs_hidl_service_exec:s0
-
-# Lights
-/vendor/bin/hw/android\.hardware\.lights-service\.scout                              u:object_r:hal_light_default_exec:s0
 
 # Mobicore TEE
 /mnt/vendor/tzapp(/.*)?                                                                u:object_r:mnt_vendor_trustlet_file:s0
@@ -60,7 +60,7 @@
 /vendor/bin/hw/android\.hardware\.thermal-service\.mediatek\.scout                      u:object_r:hal_thermal_default_exec:s0
 
 # Touch
-/vendor/bin/hw/vendor\.lineage\.touch@1\.0-service\.scout                               u:object_r:hal_lineage_touch_default_exec:s0
+/vendor/bin/hw/vendor\.lineage\.touch-service\.motorola                                u:object_r:hal_lineage_touch_default_exec:s0
 
 # Trustonic TEE
 /vendor/bin/hw/android\.hardware\.security\.keymint@3\.0-service\.trustonic            u:object_r:hal_keymint_default_exec:s0
