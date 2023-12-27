@@ -1,2 +1,0 @@
-get_prop(priv_app, vendor_mot_prop)
-get_prop(priv_app, audio_config_prop)
