@@ -182,10 +182,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/configs/linker.config.json
 
-# Linker
-PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
-    $(LOCAL_PATH)/configs/linker.config.json
-
 # Keymint
 PRODUCT_PACKAGES += \
     libkeymint.vendor \
