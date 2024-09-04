@@ -304,7 +304,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.scout-multihal
 
 # Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 33
+PRODUCT_SHIPPING_API_LEVEL := 34
+
+# Kernel
+$(call inherit-product, device/motorola/scout-kernel/kernel.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
