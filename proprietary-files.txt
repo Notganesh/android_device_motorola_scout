@@ -859,6 +859,16 @@ vendor/etc/csot_nt37706_667_1220_2712_pq.xml
 vendor/lib64/liboemcrypto.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 
+# Keymint
+vendor/bin/hw/android.hardware.identity-service.mitee@5.0
+vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee;DISABLE_DEPS
+vendor/etc/init/android.hardware.identity@5.0-service.mitee.rc
+vendor/etc/init/android.hardware.security.keymint.mitee@3.0-service.rc
+vendor/etc/vintf/manifest/android.hardware.identity@5.0-service.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
+
 # eUICC
 product/app/EuiccPartnerApp/EuiccPartnerApp.apk;PRESIGNED
 product/etc/permissions/privapp-permissions-com.google.android.euicc.xml
