@@ -12,6 +12,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Kernel
+$(call inherit-product, device/motorola/scout-kernel/kernel.mk)
+
 # Inherit generic_ramdisk product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
@@ -229,6 +232,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# Modules
+PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mt6878.cfg
+
 # Moto hardware
 PRODUCT_PACKAGES += \
     MotoActions \
@@ -269,8 +277,14 @@ PRODUCT_PACKAGES += \
     SettingsResOverlayscout \
     SystemUIOverlayscout \
     TetheringConfigOverlay \
+    SecureElementOverlayscout \
     WifiOverlay \
     EuiccOverlay
+
+PRODUCT_PACKAGES += \
+    LineageApertureOverlayscout \
+    LineageDialerscout \
+    LineageSDKResscout
 
 # Power
 PRODUCT_PACKAGES += \
