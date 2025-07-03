@@ -1144,10 +1144,6 @@ vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
 
-# Modules
-vendor/bin/init.insmod.sh
-vendor/etc/init.insmod.mt6878.cfg
-
 # Motorola (scripts)
 vendor/bin/motobox;SYMLINK=vendor/bin/expat
 vendor/bin/hardware_revisions.sh
