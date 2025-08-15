@@ -1,5 +1,6 @@
 //
-// Copyright (C) 2022 The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-FileCopyrightText: Yet Another AOSP Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,20 +14,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_binary {
-    name: "android.hardware.light-service.scout",
-    init_rc: ["android.hardware.light-service.scout.rc"],
-    vintf_fragments: ["android.hardware.light-service.scout.xml"],
+rust_binary {
+    name: "android.hardware.lights-service.scout",
     relative_install_path: "hw",
-    srcs: [
-        "main.cpp",
-        "Light.cpp",
-    ],
-    shared_libs: [
-        "libbase",
-        "libhardware",
-        "libbinder_ndk",
-        "android.hardware.light-V2-ndk",
-    ],
+    init_rc: ["android.hardware.lights.scout.rc"],
+    vintf_fragments: ["android.hardware.lights.scout.xml"],
     vendor: true,
+    rustlibs: [
+        "liblogger",
+        "liblog_rust",
+        "libbinder_rs",
+        "android.hardware.light-V2-rust",
+    ],
+    srcs: [ "main.rs" ],
 }
