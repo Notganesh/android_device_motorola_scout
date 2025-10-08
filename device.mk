@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -81,6 +84,18 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.metadata-V2-ndk.vendor \
     android.hardware.camera.provider-V2-ndk.vendor \
     android.hardware.camera.provider@2.6.vendor
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-V1-ndk.vendor \
+    android.hardware.graphics.common-V3-ndk.vendor \
+    android.hardware.graphics.common-V4-ndk.vendor \
+    android.hardware.graphics.composer3-V2-ndk.vendor \
+    android.hardware.memtrack-service.mediatek-mali \
+    libprocessgroup.vendor \
+    libhwc2on1adapter \
+    libhwc2onfbadapter \
+    libdrm.vendor
 
 # Rootdir
 PRODUCT_PACKAGES += \
