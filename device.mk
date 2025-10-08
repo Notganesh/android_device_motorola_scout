@@ -30,9 +30,14 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Bootcontrol
+PRODUCT_PACKAGES += \
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
+
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt6878 
+    fstab.mt6878
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
