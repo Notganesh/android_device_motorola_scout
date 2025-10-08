@@ -30,6 +30,33 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio.service \
+    android.hardware.audio@7.1-impl \
+    android.hardware.audio.effect@7.0-impl \
+    audioclient-types-aidl-cpp.vendor \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio_policy.stub \
+    audio.usb.default \
+    libalsautils \
+    libaudio_aidl_conversion_common_ndk.vendor \
+    libaudiofoundation.vendor \
+    libnbaio_mono \
+    libtinycompress \
+    libxml2.vendor
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+
 # Bootcontrol
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
