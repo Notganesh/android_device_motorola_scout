@@ -23,6 +23,6 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="scout_g_sys-user 15 V2VC35M.33-93-4 b008d release-keys"
+    PRIVATE_BUILD_DESC="scout_g_sys-user 15 V2VC35M.33-132-6 dd0350 release-keys"
 
-BUILD_FINGERPRINT := motorola/scout_g_sys/scout:15/V2VC35M.33-93-4/b008d:user/release-keys
+BUILD_FINGERPRINT := motorola/scout_g_sys/scout:15/V2VC35M.33-132-6/dd0350:user/release-keys
