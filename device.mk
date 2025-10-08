@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/motorola/scout
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
@@ -96,6 +98,18 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter \
     libhwc2onfbadapter \
     libdrm.vendor
+
+# Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    FrameworkResOverlayscout \
+    SettingsResOverlayscout \
+    SystemUIOverlayscout \
+    TetheringConfigOverlay \
+    WifiOverlay \
+    EuiccOverlay \
+    SecureElementOverlayscout
 
 # Rootdir
 PRODUCT_PACKAGES += \
