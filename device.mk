@@ -70,6 +70,18 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
+    android.hardware.camera.common-V1-ndk.vendor \
+    android.hardware.camera.common-V2-ndk.vendor \
+    android.hardware.camera.device-V2-ndk.vendor \
+    android.hardware.camera.device@1.0.vendor \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.metadata-V2-ndk.vendor \
+    android.hardware.camera.provider-V2-ndk.vendor \
+    android.hardware.camera.provider@2.6.vendor
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6878
