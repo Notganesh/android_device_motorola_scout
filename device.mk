@@ -27,6 +27,10 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6878 
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
