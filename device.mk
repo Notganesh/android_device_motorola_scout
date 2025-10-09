@@ -101,15 +101,19 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator-V1-ndk.vendor \
-    android.hardware.graphics.common-V3-ndk.vendor \
-    android.hardware.graphics.common-V4-ndk.vendor \
-    android.hardware.graphics.composer3-V2-ndk.vendor \
-    android.hardware.memtrack-service.mediatek-mali \
-    libprocessgroup.vendor \
-    libhwc2on1adapter \
-    libhwc2onfbadapter \
-    libdrm.vendor
+    android.hardware.graphics.composer@2.3-service \
+    android.hardware.memtrack-service.mediatek-mali
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-1.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml \
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
 # Fastboot
 PRODUCT_PACKAGES += \
