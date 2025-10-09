@@ -15,6 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Inherit common MediaTek IMS
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
 
+# Inherit generic_ramdisk product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -276,6 +279,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
+ 
+ # Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 34
  
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
