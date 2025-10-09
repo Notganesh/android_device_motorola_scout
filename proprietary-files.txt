@@ -2683,6 +2683,9 @@ vendor/etc/thermal/thermal_policy_14.conf
 vendor/etc/thermal/thermal_policy_17.conf
 
 # Wi-Fi
+vendor/bin/stp_dump3
+vendor/bin/wifi_dump
+vendor/bin/wifitest
 vendor/bin/conninfra_loader
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/netdagent
