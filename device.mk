@@ -164,6 +164,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.nxp \
+    android.hardware.secure_element-service.nxp
+
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    Tag
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml
+
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -175,6 +191,17 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     EuiccOverlay \
     SecureElementOverlayscout
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub
+
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -200,10 +227,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
-    
+ 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/mediatek \
+    hardware/motorola \
+    hardware/mediatek/libmtkperf_client \   
 
 # Thermal
 PRODUCT_PACKAGES += \
