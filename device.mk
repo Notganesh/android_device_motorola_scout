@@ -99,6 +99,11 @@ PRODUCT_PACKAGES += \
     libhwc2onfbadapter \
     libdrm.vendor
 
+# Fastboot
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl-mock \
+    fastbootd
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6878 \
