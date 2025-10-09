@@ -123,6 +123,19 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6878
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
+# SKU
+ODM_MANIFEST_SKUS += b bn bne d dn dne dsds qsqs ss tsts
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/sku/manifest_b.xml
+ODM_MANIFEST_BN_FILES := $(DEVICE_PATH)/configs/sku/manifest_bn.xml
+ODM_MANIFEST_BNE_FILES := $(DEVICE_PATH)/configs/sku/manifest_bne.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/sku/manifest_d.xml
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/sku/manifest_dn.xml
+ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/sku/manifest_dne.xml
+ODM_MANIFEST_DSDS_FILES := $(DEVICE_PATH)/configs/sku/manifest_dsds.xml
+ODM_MANIFEST_QSQS_FILES := $(DEVICE_PATH)/configs/sku/manifest_qsqs.xml
+ODM_MANIFEST_TSTS_FILES := $(DEVICE_PATH)/configs/sku/manifest_tsts.xml
+ODM_MANIFEST_SS_FILES := $(DEVICE_PATH)/configs/sku/manifest_ss.xml
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
