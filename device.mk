@@ -282,7 +282,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/mediatek \
     hardware/motorola \
-    hardware/mediatek/libmtkperf_client \   
+    hardware/mediatek/libmtkperf_client \
+    hardware/google/pixel \
+    hardware/google/interfaces
 
 # Thermal
 PRODUCT_PACKAGES += \
