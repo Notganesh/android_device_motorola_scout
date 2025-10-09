@@ -137,6 +137,17 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# Keystore
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore.xml \
+    android.system.wifi.keystore@1.0.vendor \
+    libkeystore-wifi-hidl \
+    libkeystore-engine-wifi-hidl
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
+    frameworks/native/data/etc/android.hardware.hardware_keystore.xml:$(TARGET_COPY_OUT_VENDOR)vendor/etc/permissions/android.hardware.hardware_keystore.xml
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6878 \
