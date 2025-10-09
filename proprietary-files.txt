@@ -1242,11 +1242,6 @@ vendor/etc/bt_stack_level6.conf
 vendor/etc/camera/vidhance_calibration
 vendor/etc/camera/vidhance.lic
 
-# Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
-vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
-vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
-
 # Graphics
 vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek.mt6878
 vendor/bin/hw/android.hardware.graphics.composer@3.2-service
@@ -1354,6 +1349,11 @@ vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.gnss-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.gnss.batching-V1-ndk.so
+
+# Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
+vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
+vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
 
 # IMS
 vendor/bin/lbs_hidl_service
