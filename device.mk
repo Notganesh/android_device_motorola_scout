@@ -104,6 +104,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    libshim_fp
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6878 \
