@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
@@ -8,8 +9,8 @@
 
 set -e
 
-DEVICE=scout
-VENDOR=motorola
+DEVICE=tetris
+VENDOR=nothing
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -17,7 +18,7 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="$PWD/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -31,6 +32,8 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 write_headers
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
+
+append_firmware_calls_to_makefiles "${MY_DIR}/proprietary-firmware.txt"
 
 # Finish
 write_footers
