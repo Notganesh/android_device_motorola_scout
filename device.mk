@@ -99,6 +99,28 @@ PRODUCT_PACKAGES += \
     libhwc2onfbadapter \
     libdrm.vendor
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.mt6878 \
+    init.connectivity.rc \
+    init.connectivity.common.rc \
+    init_conninfra.rc \
+    init.mmi.overlay.rc \
+    init.mmi.rc \
+    init.modem.rc \
+    init.recovery.mt6878.rc \
+    init.mt6878.rc \
+    init.mt6878.usb.rc \
+    init.mt6878.power.rc \
+    init.mtkgki.rc \
+    init.oem.hw.sh \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    ueventd.mt6878.rc
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/init/fstab.mt6878:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6878
+
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -110,10 +132,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     EuiccOverlay \
     SecureElementOverlayscout
-
-# Rootdir
-PRODUCT_PACKAGES += \
-    fstab.mt6878
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
