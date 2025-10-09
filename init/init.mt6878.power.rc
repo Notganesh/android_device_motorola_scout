@@ -10,6 +10,12 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 1-5
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/restricted/cpus 0-3
+    
+    # Adjust watermark level
+    write /proc/sys/vm/watermark_scale_factor 200
+
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
+    setprop dalvik.vm.dex2oat-threads 6
 
 ## Utilization Clamping
     # Tuning
