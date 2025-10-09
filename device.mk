@@ -75,11 +75,14 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth-V1-ndk.vendor \
-    android.hardware.bluetooth.audio-V3-ndk.vendor \
-    android.hardware.bluetooth.audio-impl \
-    libbluetooth_audio_session \
-    android.hardware.bluetooth@1.1.vendor
+    android.hardware.bluetooth@1.1-mtk-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
 # Bootcontrol
 PRODUCT_PACKAGES += \
