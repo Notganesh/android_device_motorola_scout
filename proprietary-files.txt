@@ -2623,11 +2623,6 @@ vendor/app/mcRegistry/abcd270ea5c44c58bcd3384a2fa2539e.tabin
 vendor/app/mcRegistry/e97c270ea5c44c58bcd3384a2fa2539e.tabin
 vendor/bin/mcDriverDaemon
 
-# Thermal
-vendor/bin/hw/android.hardware.thermal-service.mediatek
-vendor/etc/init/thermal-mediatek.rc
-vendor/lib64/hw/thermal_hal.so
-
 # Thermal configs
 vendor/etc/thermal/disable_skin_control.conf
 vendor/etc/thermal/disable_thermal.conf
