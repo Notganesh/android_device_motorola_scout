@@ -1413,12 +1413,6 @@ vendor/lib64/mtk_lbs_service-impl.so
 vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 
-# Lights
-vendor/bin/hw/android.hardware.lights-service.mediatek
-vendor/etc/init/lights-mtk-default.rc
-vendor/etc/vintf/manifest/lights-mtk-default.xml
-vendor/lib64/vendor.mediatek.hardware.mtklight-V1-ndk.so
-
 # MDOTA
 vendor/etc/md/apncfg/202_01.conf
 vendor/etc/md/apncfg/202_02.conf
