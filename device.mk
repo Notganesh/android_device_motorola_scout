@@ -87,16 +87,14 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.default_recovery
 
 # Camera
-PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
-    android.hardware.camera.common-V1-ndk.vendor \
-    android.hardware.camera.common-V2-ndk.vendor \
-    android.hardware.camera.device-V2-ndk.vendor \
-    android.hardware.camera.device@1.0.vendor \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.metadata-V2-ndk.vendor \
-    android.hardware.camera.provider-V2-ndk.vendor \
-    android.hardware.camera.provider@2.6.vendor
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
+    frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
+    frameworks/native/data/etc/android.hardware.camera.external.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.external.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml
 
 # Display
 PRODUCT_PACKAGES += \
