@@ -29,6 +29,7 @@ prebuilt_etc {
     relative_install_path: "init/hw",
     vendor: true,
 }
+
 prebuilt_etc {
     name: "init_conninfra.rc",
     src: "init_conninfra.rc",
@@ -110,5 +111,18 @@ prebuilt_etc {
     name: "ueventd.mt6878.rc",
     filename: "ueventd.rc",
     src: "ueventd.mt6878.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.zram.rc",
+    src: "init.zram.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab.zram",
+    src: "fstab.zram",
     vendor: true,
 }

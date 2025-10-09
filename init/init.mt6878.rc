@@ -8,6 +8,7 @@ import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /vendor/etc/init/hw/init.volte.rc
 import /vendor/etc/init/hw/init.mal.rc
+import /vendor/etc/init/hw/init.zram.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.cgroup.rc
 import /vendor/etc/init/hw/init.mmi.rc
@@ -1024,10 +1025,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
     trigger moto-boot-completed-fs-tune
-
-on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=""
-    swapon_all /vendor/etc/fstab.enableswap
-on property:sys.boot_completed=1
 
     # stop bootprof
     write /proc/bootprof 0

@@ -203,6 +203,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6878 \
+    fstab.zram \
     init.connectivity.rc \
     init.connectivity.common.rc \
     init_conninfra.rc \
@@ -211,6 +212,7 @@ PRODUCT_PACKAGES += \
     init.modem.rc \
     init.recovery.mt6878.rc \
     init.mt6878.rc \
+    init.zram.rc \
     init.mt6878.usb.rc \
     init.mt6878.power.rc \
     init.mtkgki.rc \

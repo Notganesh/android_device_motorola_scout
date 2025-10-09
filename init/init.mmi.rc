@@ -106,6 +106,8 @@ on post-fs-data
     mkdir /data/vendor/hardware_revisions 0755 system system
 
     copy /data/vendor_de/power_supply_logger/memtest.log /data/vendor/power_supply_logger/memtest.log
+    
+    start vendor.hal-fps-sh
 
 service vendor.bl_logs_copy /vendor/bin/apanic_copy.sh -i
     class late_start
@@ -221,6 +223,7 @@ service vendor.hal-fps-sh /vendor/bin/init.oem.fingerprint2.sh
     user root
     group system
     oneshot
+    disabled
 
 service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
     class core
