@@ -160,12 +160,6 @@ on post-fs
     chown radio system /proc/freqhopping/status
     chown radio system /proc/freqhopping/userdef
 
-    # Support A/B feature for emmc boot region
-    symlink /dev/block/sda /dev/block/mmcblk0boot0
-    symlink /dev/block/sdb /dev/block/mmcblk0boot1
-    symlink /dev/block/mmcblk0boot0 /dev/block/by-name/preloader_a
-    symlink /dev/block/mmcblk0boot1 /dev/block/by-name/preloader_b
-    
     # Support A/B feature for UFS boot region
     symlink /dev/block/sda /dev/block/by-name/preloader_a
     symlink /dev/block/sdb /dev/block/by-name/preloader_b
@@ -1090,6 +1084,10 @@ on property:persist.vendor.mediatek.fg.force25c=0
 
 on property:persist.vendor.mediatek.fg.log.enable=1
     write /dev/gauge/FG_daemon_log_level 7
+
+# Restart C2 service after boot completed
+on property:sys.boot_completed=1
+    restart android-hardware-media-c2-hal-1-2
 
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
