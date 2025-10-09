@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.scout \
     vendor.lineage.touch-service.motorola
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service.scout
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service-lazy \

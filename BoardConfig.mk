@@ -126,6 +126,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6878
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # SKU
 ODM_MANIFEST_SKUS += b bn bne d dn dne dsds qsqs ss tsts
 ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/sku/manifest_b.xml
