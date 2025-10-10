@@ -349,9 +349,7 @@ vendor/lib64/mt6878/libcamalgo.InlineCompGyro.so;SYMLINK=vendor/lib64/libcamalgo
 vendor/lib64/mt6878/libcamalgo.Mfbllwrapper.so;SYMLINK=vendor/lib64/libcamalgo.Mfbllwrapper.so
 vendor/lib64/mt6878/libcamalgo.aibc.so;SYMLINK=vendor/lib64/libcamalgo.aibc.so
 vendor/lib64/mt6878/libcamalgo.aibcwrapper.so;SYMLINK=vendor/lib64/libcamalgo.aibcwrapper.so
-vendor/lib64/mt6878/libcamalgo.aics.so;SYMLINK=vendor/lib64/libcamalgo.aics.so
 vendor/lib64/mt6878/libcamalgo.ainr.so;SYMLINK=vendor/lib64/libcamalgo.ainr.so
-vendor/lib64/mt6878/libcamalgo.ais2.bss.so;SYMLINK=vendor/lib64/libcamalgo.ais2.bss.so
 vendor/lib64/mt6878/libcamalgo.ais2.mfnr.so;SYMLINK=vendor/lib64/libcamalgo.ais2.mfnr.so
 vendor/lib64/mt6878/libcamalgo.c3d.so;SYMLINK=vendor/lib64/libcamalgo.c3d.so
 vendor/lib64/mt6878/libcamalgo.eis.so;SYMLINK=vendor/lib64/libcamalgo.eis.so
@@ -361,7 +359,6 @@ vendor/lib64/mt6878/libcamalgo.gyro.so;SYMLINK=vendor/lib64/libcamalgo.gyro.so
 vendor/lib64/mt6878/libcamalgo.lmv.so;SYMLINK=vendor/lib64/libcamalgo.lmv.so
 vendor/lib64/mt6878/libcamalgo.lsc.so;SYMLINK=vendor/lib64/libcamalgo.lsc.so
 vendor/lib64/mt6878/libcamalgo.mcnr.so;SYMLINK=vendor/lib64/libcamalgo.mcnr.so
-vendor/lib64/mt6878/libcamalgo.mfnr.so;SYMLINK=vendor/lib64/libcamalgo.mfnr.so
 vendor/lib64/mt6878/libcamalgo.n3d.so;SYMLINK=vendor/lib64/libcamalgo.n3d.so
 vendor/lib64/mt6878/libcamalgo.platform2.so;SYMLINK=vendor/lib64/libcamalgo.platform2.so
 vendor/lib64/mt6878/libcamalgo.tsfs.so;SYMLINK=vendor/lib64/libcamalgo.tsfs.so
@@ -1305,7 +1302,6 @@ system_ext/framework/mtk-telephony-common.jar;BOOT_JAR
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
-vendor/lib64/ese_weaver.so
 
 # Secure element - configs
 vendor/etc/hal_uuid_map_config.xml
