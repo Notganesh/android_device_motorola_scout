@@ -1,9 +1,9 @@
 #
-# Copyright (C) 2025 The LineageOS Project
+# Copyright (C) The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+BUILD_BROKEN_DUP_RULES := true
 DEVICE_PATH := device/motorola/scout
 
 # A/B
@@ -34,6 +34,18 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
+# Force any prefer32 targets to be compiled as 64 bit.
+IGNORE_PREFER32_ON_DEVICE := true
+
+# Include 64-bit drmserver to support 64-bit only devices
+TARGET_DYNAMIC_64_32_DRMSERVER := true
+
+# Include 64-bit mediaserver to support 64-bit only devices
+TARGET_DYNAMIC_64_32_MEDIASERVER := true
+
+# Enable 64-bit for non-zygote.
+ZYGOTE_FORCE_64 := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := scout
 TARGET_NO_BOOTLOADER := true
@@ -41,20 +53,29 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 450
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/mot_aids.fs
+# HIDL
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    vendor/2by2/config/device_framework_matrix.xml \
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml
 
 # Fastboot
 TARGET_BOARD_FASTBOOT_INFO_FILE := $(DEVICE_PATH)/fastboot-info.txt
 
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
-DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    vendor/lineage/config/device_framework_matrix.xml \
-    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml
-    
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/mot_aids.fs
+
+# Recovery
+TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6878
+TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TARGET_USERIMAGES_USE_F2FS := true
+
 # Kernel
 BOARD_KERNEL_BASE := 0x3fff8000
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -99,7 +120,7 @@ TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/headers/
 
 # Partitions
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/2by2/config/BoardConfigReservedSize.mk
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_EROFS_PCLUSTER_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -126,20 +147,10 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 BOARD_USES_METADATA_PARTITION := true
 
-# Platform
-TARGET_BOARD_PLATFORM := mt6878
-
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
-
-# Recovery
-TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
-BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6878
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-TARGET_USERIMAGES_USE_F2FS := true
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/props/product.prop
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -148,9 +159,13 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOOT_SECURITY_PATCH := 2025-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
-# SELinux
+# Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # SKU
 ODM_MANIFEST_SKUS += b bn bne d dn dne dsds qsqs ss tsts

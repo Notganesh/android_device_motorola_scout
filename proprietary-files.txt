@@ -3,7 +3,6 @@
 ## variant: RETJP
 
 # AEE
-vendor/lib64/libaedv.so
 vendor/lib64/libladder.so
 vendor/lib64/libudf.so
 
@@ -56,9 +55,6 @@ vendor/lib64/libvow_comp_test.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 vendor/etc/smartpa_param/AW_DSP.bin
 vendor/etc/smartpa_param/AW_SINWAVE_DSP.bin
 
@@ -739,14 +735,12 @@ vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/manifest_mmlpq.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml
 vendor/lib/egl/egl.cfg
-vendor/lib/egl/libMEOW_data.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/egl/mt6878/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/mt6878/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/mt6878/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
@@ -819,7 +813,6 @@ vendor/etc/csot_nt37706_667_1220_2712_C3D_srgb.txt
 vendor/etc/csot_nt37706_667_1220_2712_pq.xml
 
 # DRM
-vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 
@@ -834,7 +827,6 @@ vendor/bin/hw/android.hardware.biometrics.fingerprint-service-jv
 vendor/etc/init/android.hardware.biometrics.fingerprint-service-goodix2.rc
 vendor/etc/init/android.hardware.biometrics.fingerprint-service-jv2.rc
 vendor/lib64/hw/fingerprint.goodix.default.so
-vendor/lib64/android.hardware.biometrics.fingerprint-V3-ndk.so
 vendor/lib64/com.motorola.hardware.biometric.fingerprint-V2-ndk.so
 
 vendor/etc/vintf/manifest/manifest_IMoto_AIDL_Fingerprint.xml
@@ -1310,7 +1302,6 @@ vendor/etc/hal_uuid_map_config.xml
 vendor/etc/permissions/unavail.android.hardware.sensor.barometer.xml
 vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6878.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
-vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhwm.so
@@ -1318,14 +1309,10 @@ vendor/lib64/libksensor.so
 vendor/lib64/sensors.moto.so
 
 # Thermal
-vendor/bin/hw/android.hardware.thermal-service.mediatek
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
 vendor/etc/init/init.thermal_core.rc
-vendor/etc/init/thermal-mediatek.rc
-vendor/etc/vintf/manifest/thermal-mediatek.xml
 vendor/lib64/hw/thermal_hal.so
-vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V1-ndk.so
 
