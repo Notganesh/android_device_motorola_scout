@@ -22,7 +22,7 @@ git clone https://github.com/Moto-MT6879-Dev/hardware_motorola.git hardware/moto
 git clone https://github.com/techyminati/android_vendor_mediatek_ims vendor/mediatek/ims
 
 # Sepolicy
-git clone https://github.com/Moto-MT6879-Dev/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
+git clone https://github.com/Notganesh/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
 
 # Vendor
 git clone https://gitea.com/Notganesh/android_vendor_motorola_scout.git vendor/motorola/scout
