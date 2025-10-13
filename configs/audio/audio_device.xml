@@ -890,6 +890,68 @@
             <kctl name="UL4_CH1 HW_GAIN0_OUT_CH1" value="0" />
             <kctl name="UL4_CH2 HW_GAIN0_OUT_CH2" value="0" />
         </path>
+
+        <path name="PLAYBACK_TO_AP_REF" value="turnon">
+            <kctl name="UL24_CH1 DL23_CH1" value="1" />
+            <kctl name="UL24_CH2 DL23_CH2" value="1" />
+        </path>
+        <path name="PLAYBACK_TO_AP_REF" value="turnoff">
+            <kctl name="UL24_CH1 DL23_CH1" value="0" />
+            <kctl name="UL24_CH2 DL23_CH2" value="0" />
+        </path>
+        <path name="DL_MEMIF_TO_AP_REF" value="turnon">
+            <kctl name="UL24_CH1 DL0_CH1" value="1" />
+            <kctl name="UL24_CH2 DL0_CH2" value="1" />
+            <kctl name="UL24_CH1 DL1_CH1" value="1" />
+            <kctl name="UL24_CH2 DL1_CH2" value="1" />
+            <kctl name="UL24_CH1 DL2_CH1" value="1" />
+            <kctl name="UL24_CH2 DL2_CH2" value="1" />
+            <kctl name="UL24_CH1 DL3_CH1" value="1" />
+            <kctl name="UL24_CH2 DL3_CH2" value="1" />
+        </path>
+        <path name="DL_MEMIF_TO_AP_REF" value="turnoff">
+            <kctl name="UL24_CH1 DL0_CH1" value="0" />
+            <kctl name="UL24_CH2 DL0_CH2" value="0" />
+            <kctl name="UL24_CH1 DL1_CH1" value="0" />
+            <kctl name="UL24_CH2 DL1_CH2" value="0" />
+            <kctl name="UL24_CH1 DL2_CH1" value="0" />
+            <kctl name="UL24_CH2 DL2_CH2" value="0" />
+            <kctl name="UL24_CH1 DL3_CH1" value="0" />
+            <kctl name="UL24_CH2 DL3_CH2" value="0" />
+        </path>
+        <path name="DL_MEMIF_TO_AP_REF_SPEAKER_HIFI3" value="turnon">
+            <kctl name="UL24_CH1 DL_24CH_CH1" value="1" />
+            <kctl name="UL24_CH2 DL_24CH_CH2" value="1" />
+        </path>
+        <path name="DL_MEMIF_TO_AP_REF_SPEAKER_HIFI3" value="turnoff">
+            <kctl name="UL24_CH1 DL_24CH_CH1" value="0" />
+            <kctl name="UL24_CH2 DL_24CH_CH2" value="0" />
+        </path>
+        <path name="DL_PLAYBACK_AP_REF_NON_SPEAKER_HIFI3" value="turnon">
+            <kctl name="UL24_CH1 DL2_CH1" value="1" />
+            <kctl name="UL24_CH2 DL2_CH2" value="1" />
+            <kctl name="UL24_CH1 DL1_CH1" value="1" />
+            <kctl name="UL24_CH2 DL1_CH2" value="1" />
+            <kctl name="UL24_CH1 DL_24CH_CH1" value="1" />
+            <kctl name="UL24_CH2 DL_24CH_CH2" value="1" />
+        </path>
+        <path name="DL_PLAYBACK_AP_REF_NON_SPEAKER_HIFI3" value="turnoff">
+            <kctl name="UL24_CH1 DL2_CH1" value="0" />
+            <kctl name="UL24_CH2 DL2_CH2" value="0" />
+            <kctl name="UL24_CH1 DL1_CH1" value="0" />
+            <kctl name="UL24_CH2 DL1_CH2" value="0" />
+            <kctl name="UL24_CH1 DL_24CH_CH1" value="0" />
+            <kctl name="UL24_CH2 DL_24CH_CH2" value="0" />
+        </path>
+        <path name="PLAYBACK6_TO_AP_REF" value="turnon">
+            <kctl name="UL24_CH1 DL6_CH1" value="1" />
+            <kctl name="UL24_CH2 DL6_CH2" value="1" />
+        </path>
+        <path name="PLAYBACK6_TO_AP_REF" value="turnoff">
+            <kctl name="UL24_CH1 DL6_CH1" value="0" />
+            <kctl name="UL24_CH2 DL6_CH2" value="0" />
+        </path>
+
         <path name="PLAYBACK_TO_DSP_REF" value="turnon">
             <kctl name="UL1_CH1 DL23_CH1" value="1" />
             <kctl name="UL1_CH2 DL23_CH2" value="1" />

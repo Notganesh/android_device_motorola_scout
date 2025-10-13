@@ -14,41 +14,9 @@
       "Name": "MemSwappiness",
       "Controller": "memory",
       "File": "memory.swappiness"
-    },
-    {
-      "Name": "FreezerState",
-      "Controller": "freezer",
-      "File": "cgroup.freeze"
     }
   ],
-
   "Profiles": [
-    {
-      "Name": "Frozen",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "FreezerState",
-            "Value": "1"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "Unfrozen",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "FreezerState",
-            "Value": "0"
-          }
-        }
-      ]
-    },
     {
       "Name": "LowIoPriority",
       "Actions": [
@@ -101,7 +69,6 @@
         }
       ]
     },
-
     {
       "Name": "TimerSlackHigh",
       "Actions": [
@@ -126,7 +93,6 @@
         }
       ]
     },
-
     {
       "Name": "PerfBoost",
       "Actions": [
@@ -153,7 +119,6 @@
         }
       ]
     },
-
     {
       "Name": "LowMemoryUsage",
       "Actions": [
@@ -171,7 +136,6 @@
           {
             "Name": "MemSwappiness",
             "Value": "150"
-
           }
         }
       ]
@@ -209,35 +173,8 @@
           }
         }
       ]
-    },
-    {
-      "Name": "FreezerThawed",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "FreezerState",
-            "Value": "THAWED"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "FreezerFrozen",
-      "Actions": [
-        {
-          "Name": "SetAttribute",
-          "Params":
-          {
-            "Name": "FreezerState",
-            "Value": "FROZEN"
-          }
-        }
-      ]
     }
   ],
-
   "AggregateProfiles": [
     {
       "Name": "SCHED_SP_DEFAULT",
@@ -285,3 +222,4 @@
     }
   ]
 }
+

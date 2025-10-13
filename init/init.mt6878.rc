@@ -161,9 +161,20 @@ on post-fs
     chown radio system /proc/freqhopping/status
     chown radio system /proc/freqhopping/userdef
 
-    # Support A/B feature for UFS boot region
-    symlink /dev/block/sda /dev/block/by-name/preloader_a
-    symlink /dev/block/sdb /dev/block/by-name/preloader_b
+    # Support A/B feature for emmc boot region
+    symlink /dev/block/sda /dev/block/mmcblk0boot0
+    symlink /dev/block/sdb /dev/block/mmcblk0boot1
+    symlink /dev/block/mmcblk0boot0 /dev/block/by-name/preloader_a
+    symlink /dev/block/mmcblk0boot1 /dev/block/by-name/preloader_b
+
+    # Support A/B feature for combo emmc and ufs OTA update
+    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_emmc_a
+    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_emmc_b
+    symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_ufs_a
+    symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_ufs_b
+
+    symlink /dev/block/mapper/pl_a /dev/block/by-name/preloader_raw_a
+    symlink /dev/block/mapper/pl_b /dev/block/by-name/preloader_raw_b
 
 # change owner
     chown system system /proc/bootprof
@@ -221,10 +232,6 @@ on post-fs-data
     chown root system /mnt/vendor/nvdata
     chmod 0771 /mnt/vendor/nvdata
     mkdir /mnt/vendor/nvdata/media 0771 media audio
-    
-    # Audio dump
-    mkdir /data/vendor/audiohal 0771 system audio
-    mkdir /data/vendor/audiohal/audio_param 0771 system audio
 
     #Create cct mount point
     mkdir /mnt/vendor/cct
@@ -625,7 +632,7 @@ on post-fs-data
     chown system camera /dev/MAIN2AF
     chown system camera /dev/MAIN3AF
     chown system camera /dev/SUBAF
-    chown system camera /dev/apusys
+    chown system vendor_apusys /dev/apusys
     chown system camera /dev/mtk_ccd
     chown system camera /sys/kernel/debug/mtk_cam_dbg/0/ctrl
     chown system camera /sys/kernel/debug/mtk_cam_dbg/1/ctrl
@@ -1017,6 +1024,10 @@ on property:sys.boot_completed=1
     write /sys/block/dm-5/queue/read_ahead_kb 128
     trigger moto-boot-completed-fs-tune
 
+on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=""
+    swapon_all /vendor/etc/fstab.enableswap
+on property:sys.boot_completed=1
+
     # stop bootprof
     write /proc/bootprof 0
 
@@ -1077,10 +1088,6 @@ on property:persist.vendor.mediatek.fg.force25c=0
 on property:persist.vendor.mediatek.fg.log.enable=1
     write /dev/gauge/FG_daemon_log_level 7
 
-# Restart C2 service after boot completed
-on property:sys.boot_completed=1
-    restart android-hardware-media-c2-hal-1-2
-
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
     class core
@@ -1131,14 +1138,3 @@ service osi /system/bin/osi
     disabled
     oneshot
     #seclabel u:r:osi:s0
-
-on post-fs
-    start logger
-
-on property:sys.boot_completed=1
-    stop logger
-
-service logger /system/bin/logcat -b all -D -f /metadata/boot_log.txt
-    class main
-    user root
-    group root system

@@ -49,6 +49,8 @@ on post-fs-data
     mkdir /data/vendor/jiiov 0770 system system
     mkdir /data/vendor/jiiov/factory_test 0770 system system
     mkdir /mnt/vendor/persist/jiiov 0770 system system
+    # Add for OIS hall test result
+    mkdir /mnt/vendor/persist/camera/ois_hall 0770 vendor_tcmd camera
 
     # Required by touchRec for write the touch data
     mkdir /data/vendor/touchrec 0773 input input
@@ -75,16 +77,12 @@ on post-fs-data
     chown root camera /data/vendor/camera_dump
     chmod 0770 /data/vendor/camera_dump
 
+    # change camera sois save hall data
+    mkdir /mnt/vendor/persist/camera/ois_hall_data 0770 vendor_tcmd camera
+
 on init
     insmod /vendor/lib/modules/fs3001.ko
 
-on post-fs
-    # Sensors
-    chown system system /sys/devices/virtual/touchscreen/primary/double_tap_enabled
-    chown system system /sys/devices/virtual/touchscreen/primary/double_tap_pressed
-    chown system system /sys/devices/virtual/touchscreen/primary/udfps_enabled
-    chown system system /sys/devices/virtual/touchscreen/primary/udfps_pressed
-    
 on late-init
     #moto algo params
     chmod 0660 /sys/bus/platform/drivers/mtk_nanohub/algo_params
@@ -328,4 +326,9 @@ on moto-boot-completed-fs-tune
     write /sys/block/${dev.mnt.dev.data}/queue/read_ahead_kb 512
 
 on early-init && property:ro.vendor.build.motfactory=1
+    setprop vendor.debug.hwc.plat_switch 0x13019
+
+# Enable backlight debugging in userdebug builds
+on early-init && property:ro.build.type=userdebug
+    # IKSWW-1552 - Enables backlight sysfs access via HW Compose debug flag (0x13019)
     setprop vendor.debug.hwc.plat_switch 0x13019
