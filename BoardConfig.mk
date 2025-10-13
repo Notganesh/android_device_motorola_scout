@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-BUILD_BROKEN_DUP_RULES := true
+
 DEVICE_PATH := device/motorola/scout
 
 # A/B
@@ -49,6 +49,10 @@ ZYGOTE_FORCE_64 := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := scout
 TARGET_NO_BOOTLOADER := true
+
+# Build
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Display
 TARGET_SCREEN_DENSITY := 450
