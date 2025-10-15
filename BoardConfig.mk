@@ -171,19 +171,6 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SELINUX_IGNORE_NEVERALLOWS := true
 
-# SKU
-ODM_MANIFEST_SKUS += b bn bne d dn dne dsds qsqs ss tsts
-ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/sku/manifest_b.xml
-ODM_MANIFEST_BN_FILES := $(DEVICE_PATH)/configs/sku/manifest_bn.xml
-ODM_MANIFEST_BNE_FILES := $(DEVICE_PATH)/configs/sku/manifest_bne.xml
-ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/sku/manifest_d.xml
-ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/sku/manifest_dn.xml
-ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/sku/manifest_dne.xml
-ODM_MANIFEST_DSDS_FILES := $(DEVICE_PATH)/configs/sku/manifest_dsds.xml
-ODM_MANIFEST_QSQS_FILES := $(DEVICE_PATH)/configs/sku/manifest_qsqs.xml
-ODM_MANIFEST_TSTS_FILES := $(DEVICE_PATH)/configs/sku/manifest_tsts.xml
-ODM_MANIFEST_SS_FILES := $(DEVICE_PATH)/configs/sku/manifest_ss.xml
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
