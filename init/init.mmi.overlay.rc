@@ -49,8 +49,6 @@ on post-fs-data
     mkdir /data/vendor/jiiov 0770 system system
     mkdir /data/vendor/jiiov/factory_test 0770 system system
     mkdir /mnt/vendor/persist/jiiov 0770 system system
-    # Add for OIS hall test result
-    mkdir /mnt/vendor/persist/camera/ois_hall 0770 vendor_tcmd camera
 
     # Required by touchRec for write the touch data
     mkdir /data/vendor/touchrec 0773 input input
@@ -76,9 +74,6 @@ on post-fs-data
     mkdir /data/vendor/camera_dump
     chown root camera /data/vendor/camera_dump
     chmod 0770 /data/vendor/camera_dump
-
-    # change camera sois save hall data
-    mkdir /mnt/vendor/persist/camera/ois_hall_data 0770 vendor_tcmd camera
 
 on init
     insmod /vendor/lib/modules/fs3001.ko
