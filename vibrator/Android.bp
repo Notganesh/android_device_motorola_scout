@@ -13,9 +13,8 @@ cc_library_shared {
         "libutils",
         "liblog",
         "libbinder_ndk",
-        "android.hardware.vibrator-V1-ndk",
+        "android.hardware.vibrator-V3-ndk",
     ],
-    export_include_dirs: ["include"]
 }
 
 cc_binary {
