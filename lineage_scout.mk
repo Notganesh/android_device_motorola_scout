@@ -24,4 +24,6 @@ PRODUCT_MODEL := motorola edge 60 fusion
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceName=scout
+    DeviceName=scout \
+    BuildDesc="scout_g_sys-user 14 W1VC36H.14-20-1 ef13a release-keys" \
+    BuildFingerprint=motorola/scout_g_hal/scout:14/W1VC36H.14-20-1/ef13a:user/release-keys
