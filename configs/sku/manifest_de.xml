@@ -2,7 +2,7 @@
     Input:
         odm_manifest_op_dsds.xml
         odm_manifest_dsds.xml
-        manifest_nxpnfc_dn.xml
+        manifest_nxpnfc_de.xml
         manifest_nfc.xml
 -->
 <manifest version="4.0" type="device">
@@ -53,9 +53,11 @@
             <name>ISecureElement</name>
             <instance>SIM1</instance>
             <instance>SIM2</instance>
+            <instance>eSE1</instance>
         </interface>
         <fqname>@1.2::ISecureElement/SIM1</fqname>
         <fqname>@1.2::ISecureElement/SIM2</fqname>
+        <fqname>@1.2::ISecureElement/eSE1</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>vendor.mediatek.hardware.mtkradioex</name>
@@ -116,6 +118,16 @@
         <fqname>@3.0::IRadioOp/OpImsRILd2</fqname>
         <fqname>@3.0::IRadioOp/slot1</fqname>
         <fqname>@3.0::IRadioOp/slot2</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.nxp.hardware.nxpese</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INxpEse</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::INxpEse/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>

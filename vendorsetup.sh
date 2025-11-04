@@ -6,9 +6,6 @@ end="\033[0m"
 echo -e "${color}Applying patches${end}"
 sleep 1
 
-# source
-git clone https://github.com/Motorola-Edge-60-Fusion-Development/kernel_motorola_mt6878.git kernel/motorola/mt6878
-
 # Kernel
 git clone https://github.com/Notganesh/device_motorola_scout-kernel.git device/motorola/scout-kernel
 
