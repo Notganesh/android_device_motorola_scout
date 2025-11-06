@@ -1345,6 +1345,16 @@ vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
 vendor/lib64/sensors.moto.so
 
+# Vibrator
+vendor/bin/hw/android.hardware.vibrator-service.mediatek
+vendor/etc/init/vibrator-mtk-default.rc
+vendor/etc/vintf/manifest/vibrator-mtk-default.xml
+vendor/lib64/hw/vibrator.default.so
+vendor/lib64/libaacvibrator.so
+vendor/lib64/libtiktapvibrator.so
+vendor/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk.so
+vendor/lib64/vendor.awinic.hardware.tiktap.vibrator-V1-ndk.so
+
 # Thermal
 vendor/bin/hw/android.hardware.thermal-service.mediatek:vendor/bin/hw/android.hardware.thermal-service.mediatek.fuji
 vendor/bin/thermal_core
