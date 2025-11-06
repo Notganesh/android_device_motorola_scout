@@ -12,9 +12,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Kernel
-$(call inherit-product, device/motorola/scout-kernel/kernel.mk)
-
 # Inherit generic_ramdisk product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
@@ -148,11 +145,6 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    libshim_fp \
-    android.hardware.biometrics.fingerprint@2.3-service.gdx \
-    android.hardware.biometrics.fingerprint@2.3-service.egis
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
