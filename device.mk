@@ -264,11 +264,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     EuiccOverlay
 
-PRODUCT_PACKAGES += \
-    LineageApertureOverlayscout \
-    LineageDialerscout \
-    LineageSDKResscout
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr \
