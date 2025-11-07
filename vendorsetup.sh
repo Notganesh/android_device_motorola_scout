@@ -22,4 +22,4 @@ git clone https://github.com/techyminati/android_vendor_mediatek_ims vendor/medi
 git clone https://github.com/Notganesh/device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
 
 # Vendor
-git clone https://gitea.com/Notganesh/android_vendor_motorola_scout.git vendor/motorola/scout
+git clone https://github.com/Notganesh/android_vendor_motorola_scout.git vendor/motorola/scout
